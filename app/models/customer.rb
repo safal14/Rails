@@ -14,4 +14,5 @@ class Customer < ApplicationRecord
       validates :LastName, presence:true
       validates :phone, presence:true, uniqueness:true
       
+      scope :by_name, -> { order(FirstName: :asc) }
 end 
