@@ -9,4 +9,6 @@ class Product < ApplicationRecord
   validates :Name, presence:true
   validates :Description, presence:true
   validates :price, presence:true
+
+  scope :by_price_desc, -> { order(price: :desc) }
 end
